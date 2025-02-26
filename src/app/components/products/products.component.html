@@ -1,0 +1,59 @@
+
+
+
+
+<div class="py-5">    <h2>Shop Popular Products</h2>
+    <input type="text" [(ngModel)]="datainput" class=" form-control w-50 form-control-sm mx-auto my-4  py-2  text-bg-light  "placeholder="Search.....">
+    <div class="row g-4">
+
+        <div class="col-md-3 " *ngFor="let item of productdata|serch:datainput| paginate: { id: 'productpaginate',
+        itemsPerPage: pageSize,
+        currentPage: currentpage,
+        totalItems: total } ">
+
+
+  <div class="position-relative card product ">
+    <div class="d-flex justify-content-end" *ngIf="whishlist.includes(item.id)">
+      <i class="fa-solid  fa-heart fa-2x heart text-danger" (click)="removefav(item.id)"></i>
+    </div>
+ 
+    
+    
+    <i class="fa-regular fa-heart heart " (click)="addwhishlist(item._id)" *ngIf="!whishlist.includes(item.id)"></i>
+  <div [routerLink]="['/details',item.id]" class="p-2">
+
+    
+    <img [src]="item.imageCover" [alt]="item.title" class="w-100">
+      <h2 class="h6">{{item.title.split(" ").slice(0,2).join(" ")}}</h2>
+      <h3 class="h6 text-main">{{item.category.name}}</h3>
+    
+      <div class="d-flex justify-content-between align-items-center">
+
+
+<span>{{item.price}}EGP</span>
+<span><i class="fas fa-star rating-color"></i>{{item.ratingsAverage}}</span>
+      </div>
+  </div>
+<button class="btn btn-main w-100 main-btn" (click)="addtocart(item.id)"> Addtocart</button>
+</div>
+         
+
+    
+    </div></div>
+
+    <pagination-controls  id="productpaginate"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="9"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next"
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page"
+    screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+
+
+

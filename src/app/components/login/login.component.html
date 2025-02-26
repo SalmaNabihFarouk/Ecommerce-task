@@ -1,0 +1,44 @@
+
+<section class="w-75 mx-auto py-5">
+    <form [formGroup]="registerform" class="" (ngSubmit)="handleform()">
+        <h1>Login Now:</h1>
+    
+        
+    <div class="mb-2">
+        <label for="email" >email:</label>
+    <input type="email" formControlName="email" id="email"  class="form-control">
+    </div>
+    <div class="alert alert-danger " *ngIf="registerform.get('email')?.errors&&registerform.get('email')?.touched ">
+    
+        <p *ngIf="registerform.get('email')?.getError('required')">email is Required</p>
+        <p *ngIf="registerform.get('email')?.getError('email')">InValid Format</p>
+    
+            </div>
+    <div class="mb-2"> 
+        <label for="password">password:</label>  
+    <input type="password"formControlName="password"  id="password"  class="form-control">
+    </div>
+    <div class="alert alert-danger " *ngIf="registerform.get('password')?.errors&&registerform.get('password')?.touched ">
+    
+        <p *ngIf="registerform.get('password')?.getError('required')">password is Required</p>
+        <p *ngIf="registerform.get('password')?.getError('pattern')">
+     password must start with upperCase then from 6 to 10</p>
+    
+            </div>
+    
+    
+    <div class="d-flex  justify-content-between align-items-center">
+         
+    <button class="btn-main " [disabled]="registerform.invalid">login
+        <i *ngIf="loading" class="fas fa-spinner fa-spin"></i>
+    </button>
+<a routerLink="/forget" class="link-primary">Forgotpassword</a>
+    </div>
+   
+    <!-- <button [bg-danger]="true"></button> -->
+    
+
+    </form>
+        
+    <p class="alert alert-danger" *ngIf="erromes">{{erromes}}</p>
+</section>

@@ -1,0 +1,38 @@
+<section>
+    <div class="row my-5">
+        <div class="col-md-3">
+          <section class="my-5">
+
+            <owl-carousel-o [options]="customOptions">
+          
+              <ng-container *ngFor="let slide of data.images">
+                <ng-template carouselSlide >
+                    <div class="">
+                        <img [src]="slide"  height="270px" class="w-100">
+                      
+                    </div>
+                
+                </ng-template>
+              </ng-container>
+          
+            </owl-carousel-o>
+        
+        </section>
+        </div>
+        <div class="col-md-9 d-flex align-items-center ">
+          <div class="">
+            <h1 class="h4 py-1">{{data.title}}</h1>
+            <h2 class="h5 py-1 text-muted">{{data.description}}</h2>
+            <span class="text-main py-2">{{data.category?.name}}</span>
+            <div class="d-flex justify-content-between align-items-center py-3">
+
+
+                <span>{{data.price}}EGP</span>
+                <span><i class="fas fa-star rating-color"></i>{{data.ratingsAverage}}</span>
+                        </div>
+                        <button class="btn btn-main w-100 d-block" (click)="addtocart(data.id)">Add</button>
+          </div>
+        </div>
+    </div>
+</section>
+

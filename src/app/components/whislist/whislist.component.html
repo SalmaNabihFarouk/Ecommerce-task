@@ -1,0 +1,47 @@
+
+
+<p>{{c}}</p>
+
+
+
+<div class="py-5">  <div class="row g-4">
+
+    <div class="col-md-2 " *ngFor="let item of data">
+
+
+<div class="position-relative card product">
+<div class="d-flex justify-content-end" *ngIf="whishlist.includes(item.id)">
+  <i class="fa-solid  fa-heart fa-2x heart text-danger" (click)="removefav(item.id)"></i>
+
+</div>
+
+
+
+<i class="fa-regular fa-heart heart " (click)="addwhishlist(item._id)" *ngIf="!whishlist.includes(item.id)"></i>
+<div [routerLink]="['/details',item.id]">
+
+
+<img [src]="item.imageCover" [alt]="item.title" class="w-100">
+  <h2 class="h6">{{item.title.split(" ").slice(0,2).join(" ")}}</h2>
+  <h3 class="h6 text-main">{{item.category.name}}</h3>
+
+  <div class="d-flex justify-content-between align-items-center">
+
+
+<span>{{item.price}}EGP</span>
+<span><i class="fas fa-star rating-color"></i>{{item.ratingsAverage}}</span>
+  </div>
+</div>
+<button class="btn btn-main w-100" (click)="addtocart(item.id)"> Addtocart</button>
+</div>
+     
+
+
+</div>
+</div>
+
+
+
+
+
+
