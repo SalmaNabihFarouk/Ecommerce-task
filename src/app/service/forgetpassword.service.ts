@@ -8,26 +8,27 @@ import { Observable } from 'rxjs';
 export class ForgetpasswordService {
 
 
-  constructor( private _HttpClient:HttpClient) {
+  constructor(private _HttpClient: HttpClient) {
 
 
 
   }
 
-  forgetpassword(user:object):Observable<any>{
-return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,user)
+  forgetpassword(user: object): Observable<any> {
+    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`, user)
+
   }
 
 
 
-  
-  resetcode(user:object):Observable<any>{
-   return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`,user)
-     }
+
+  resetcode(user: object): Observable<any> {
+    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode`, user)
+  }
 
 
 
-     newpass(user:object):Observable<any>{
-       return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`,user)
-     }
+  newpass(user: object): Observable<any> {
+    return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`, user)
+  }
 }
