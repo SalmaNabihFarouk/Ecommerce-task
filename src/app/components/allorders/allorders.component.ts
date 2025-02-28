@@ -50,6 +50,8 @@ userData: any = {};
 
       // Now that userData is set, fetch user orders
       this.getUserOrders(this.userData.id);
+
+      
     }
   }
 

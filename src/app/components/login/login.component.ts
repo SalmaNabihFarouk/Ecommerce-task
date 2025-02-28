@@ -33,7 +33,7 @@ export class LoginComponent {
         next:(responce)=>{
           
       console.log(responce);
-      if(responce.user.email=="s111@gmail.com"){
+      if(responce.user.email=="j111@gmail.com"){
         this._Router.navigate(["admin"])
       }
       else{ 
