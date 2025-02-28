@@ -1,9 +1,9 @@
 
 <section class="w-75 mx-auto py-5">
     <form [formGroup]="registerform" class="" (ngSubmit)="handleform()">
-        <h1>Register now:</h1> 
+        <h1> {{"register.log"|translate}}</h1> 
         <div class="mb-2">
-            <label for="name" >name:</label>
+            <label for="name" >{{"register.name"|translate}}</label>
     <input type="text" formControlName="name" id="name"  class="form-control">
         </div>
         <div class="alert alert-danger " *ngIf="registerform.get('name')?.errors&&registerform.get('name')?.touched ">
@@ -14,7 +14,7 @@
         </div>
         
     <div class="mb-2">
-        <label for="email" >email:</label>
+        <label for="email" >{{"register.email"|translate}}</label>
     <input type="email" formControlName="email" id="email"  class="form-control">
     </div>
     <div class="alert alert-danger " *ngIf="registerform.get('email')?.errors&&registerform.get('email')?.touched ">
@@ -24,7 +24,7 @@
     
             </div>
     <div class="mb-2"> 
-        <label for="password">password:</label>  
+        <label for="password">{{"register.password"|translate}}</label>  
     <input type="password"formControlName="password"  id="password"  class="form-control">
     </div>
     <div class="alert alert-danger " *ngIf="registerform.get('password')?.errors&&registerform.get('password')?.touched ">
@@ -34,7 +34,7 @@
      password must start with upperCase then from 6 to 10</p>
     
             </div>
-    <div class="mb-2"><label for="rePassword">rePassword:</label>
+    <div class="mb-2"><label for="rePassword">{{"register.rePassword"|translate}}</label>
         <input type="password"formControlName="rePassword"  id="rePassword"  class="form-control">
     </div>
     <div class="alert alert-danger " *ngIf="registerform.get('rePassword')?.errors&&registerform.get('rePassword')?.touched ">
@@ -47,7 +47,7 @@
             </div>
     
         <div class="mb-2">
-            <label for="phone">phone:</label>
+            <label for="phone">{{"register.phone"|translate}}</label>
     <input type="tel"formControlName="phone"  id="phone"  class="form-control">
         </div>
         <div class="alert alert-danger " *ngIf="registerform.get('phone')?.errors&&registerform.get('phone')?.touched ">

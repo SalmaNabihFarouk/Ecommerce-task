@@ -49,6 +49,33 @@
     <input type="text " [(ngModel)]="datainput" class=" form-control w-50 py-2 form-control-sm mx-auto my-3  text-bg-light "placeholder="Search.....">
     <div class="row g-4">
 
+      <div class="position-relative card product col-md-3">
+        <div class="d-flex justify-content-end" >
+          <i class="fa-solid  fa-heart fa-2x heart text-danger" ></i>
+        </div>
+     
+        
+        
+        <i class="fa-regular fa-heart heart "></i>
+    
+      <div  class="p-2 ">
+    
+        
+        <img class="w-100 " src="../../../assets/main-slider-1.jpeg">
+          <h2 class="h6">{{"product.title"|translate}}</h2>
+          <h3 class="h6 text-main">{{"product.category"|translate}}</h3>
+        
+          <div class="d-flex justify-content-between align-items-center">
+    
+    
+    <span>{{"product.price"|translate}} EGP</span>
+    <span><i class="fas fa-star rating-color"></i></span>
+          </div>
+      </div>
+    <button class="btn btn-main w-100 main-btn" > Addtocart</button>
+    </div>
+           
+
         <div class="col-md-3 " *ngFor="let item of productdata|serch:datainput |slice:0:18">
 
 
@@ -60,6 +87,7 @@
     
     
     <i class="fa-regular fa-heart heart " (click)="addwhishlist(item._id)" *ngIf="!whishlist.includes(item.id)"></i>
+
   <div [routerLink]="['/details',item.id]" class="p-2">
 
     

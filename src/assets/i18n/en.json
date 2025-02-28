@@ -4,17 +4,41 @@
 "h": "Home",
 "cart":"cart",
 "Products":"products",
-
-
-
 "categories":"categories",
-
-
 "Brands":"brands",
-
-
-
 "signout":"signout",
 "lang":"language"
+},
+"product":{
+    "title":"Red velvet",
+   "category":"desert",
+"price":"333"
 }
+,
+
+
+"login":{
+    "email":"email",
+   "password":"password",
+"log":"login Now"
+},
+"nav-auth":{
+    "login":"login ",
+   "register":"register"
+
+}
+,
+"register":{
+    "email":"email",
+   "password":"password",
+"log":"register Now",
+
+"name":"name",
+
+"rePassword":"rePassword",
+"phone":"phone"
+
+}
+
+
 }
