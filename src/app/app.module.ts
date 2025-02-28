@@ -31,7 +31,17 @@ import { LoadingInterceptor } from './loading.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { AdminComponent } from './admin/admin.component';
+
+
 // Function to create TranslateLoader
+
+///////////////////////
+
+
+
+
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
 }
@@ -56,9 +66,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductsComponent,
     RegisterComponent,
     WhislistComponent,
-    SerchPipe
+    SerchPipe,
+    AdminComponent,
+
+
+
   ],
   imports: [
+
+
+ 
+    ////////////
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule ,

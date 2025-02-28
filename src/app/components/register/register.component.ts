@@ -70,4 +70,27 @@ export class RegisterComponent {
   
   
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 }

@@ -17,6 +17,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AllordersComponent } from './components/allorders/allorders.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
 import { WhislistComponent } from './components/whislist/whislist.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 const routes: Routes = [
   {path:"",canActivate:[authGuard],component:LayoutblankComponent,children:[
@@ -39,7 +41,18 @@ const routes: Routes = [
     
     {  path:"forget",component:ForgetpasswordComponent},
   ]},
- {path:"**",component:NotfoundComponent}
+  {path:"admin",component:AdminComponent},
+ {path:"**",component:NotfoundComponent},
+
+
+
+ ///////////////////////////////
+
+
+
+
+
+
 ];
 
 @NgModule({

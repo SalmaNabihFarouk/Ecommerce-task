@@ -1,0 +1,158 @@
+
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* الشريط الجانبي */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2c3e50;
+            color: white;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #34495e;
+        }
+
+        /* المحتوى الرئيسي */
+        .main-content {
+            margin-right: 250px; /* يتناسب مع عرض الشريط الجانبي */
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            margin-top: 0;
+        }
+
+        /* البطاقات */
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin: 10px 0;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #34495e;
+        }
+
+        /* التجاوب */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-right: 0;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+
+    <!-- الشريط الجانبي -->
+    <div class="sidebar">
+        <h2>لوحة التحكم</h2>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">المستخدمين</a></li>
+            <li><a href="#">الإحصائيات</a></li>
+            <li><a href="#">الإعدادات</a></li>
+            <li><a href="#">التقارير</a></li>
+        </ul>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <h1>مرحبًا بك في لوحة التحكم</h1>
+        <p>هذا مثال بسيط لداش بورد إداري بدون استخدام مكتبات خارجية.</p>
+
+        <!-- البطاقات -->
+        <div class="cards">
+            <div class="card">
+                <h3>المستخدمين</h3>
+                <p>عدد المستخدمين: 120</p>
+                <a href="#">عرض التفاصيل</a>
+            </div>
+            <div class="card">
+                <h3>الإحصائيات</h3>
+                <p>زيارات اليوم: 300</p>
+                <a href="#">عرض التفاصيل</a>
+            </div>
+            <div class="card">
+                <h3>التقارير</h3>
+                <p>تقارير جديدة: 5</p>
+                <a href="#">عرض التفاصيل</a>
+            </div>
+        </div>
+    </div>
+

@@ -33,11 +33,16 @@ export class LoginComponent {
         next:(responce)=>{
           
       console.log(responce);
-      this._Router.navigate(["home"])
-      localStorage.setItem("usertoken",responce.token);
-      this._AuthService.decodeUser();
-      console.log("llll");
-
+      if(responce.user.email=="s111@gmail.com"){
+        this._Router.navigate(["admin"])
+      }
+      else{ 
+          this._Router.navigate(["home"])
+        localStorage.setItem("usertoken",responce.token);
+        this._AuthService.decodeUser();
+        console.log("llll");
+  }
+   
   
         },
       
