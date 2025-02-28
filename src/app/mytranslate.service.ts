@@ -25,4 +25,12 @@ changeDirection(): void {
   document.documentElement.dir= 'rtl';
 }
 }
+
+
+changeLang(lang:string):void {
+  localStorage.setItem('lang',lang)
+  this._TranslateService.use(lang); // USe Lang ar
+
+  this.changeDirection();
+}
 }

@@ -1,8 +1,9 @@
 import { CartService } from './../../shared/service/cart.service';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { WhislistService } from 'src/app/service/whislist.service';
+import { MytranslateService } from 'src/app/mytranslate.service';
 
 @Component({
   selector: 'app-nav-blank',
@@ -12,6 +13,7 @@ import { WhislistService } from 'src/app/service/whislist.service';
 export class NavBlankComponent {
   num:number=0;
   num2:number=0;
+  private readonly _MytranslateService =inject(MytranslateService)
 constructor(private _CartService:CartService,private _WhislistService:WhislistService,private _Router:Router){
 
 }
@@ -63,4 +65,9 @@ this.num2=responce.count;
     localStorage.removeItem('usertoken');
 this._Router.navigate(['login'])
   }
+
+  
+change(lang: string):void {
+  this._MytranslateService. changeLang( lang )
+}
 }

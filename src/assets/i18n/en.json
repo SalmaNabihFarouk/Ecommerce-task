@@ -1,6 +1,7 @@
-{"navbar":{
+{
+    "navbar":{
 
-"Ноmе": "home",
+"h": "Home",
 "cart":"cart",
 "Products":"products",
 
@@ -9,11 +10,11 @@
 "categories":"categories",
 
 
-"Brands ":"brands",
+"Brands":"brands",
 
 
 
 "signout":"signout",
-"lang":"lang"
+"lang":"language"
 }
 }
