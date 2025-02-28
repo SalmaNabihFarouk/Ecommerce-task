@@ -1,6 +1,6 @@
 <section class="w-75 mx-auto ordersSection bg-main-light rounded-4">
-    <h2 class="text-center pt-4">All Orders <span class="badge bg-info">{{allOrders.length}}</span></h2>
-    <div class="row d-flex align-content-center shadow-lg my-4 rounded-3 border border-success py-4" *ngFor="let order of allOrders,index as ind">
+    <h2 class="text-center pt-4">All Orders <span class="badge bg-info">{{orders.length}}</span></h2>
+    <div class="row d-flex align-content-center shadow-lg my-4 rounded-3 border border-success py-4" *ngFor="let order of orders,index as ind">
         <span class="mb-2 fw-bold">Order : {{ind+1}}</span>
         <div class="col-md-8" *ngFor="let product of order.cartItems">
             <div class="row d-flex align-items-center">

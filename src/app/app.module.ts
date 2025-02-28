@@ -3,7 +3,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-import{HTTP_INTERCEPTORS, HttpClientModule}from '@angular/common/http';
+import{HTTP_INTERCEPTORS, HttpClient, HttpClientModule}from '@angular/common/http';
 import{BrowserAnimationsModule}from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +29,12 @@ import { SerchPipe } from './serch.pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './loading.interceptor';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+// Function to create TranslateLoader
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +68,18 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule,
+    HttpClientModule,
+    // تهيئة TranslateModule
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+    
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}],
   bootstrap: [AppComponent]
